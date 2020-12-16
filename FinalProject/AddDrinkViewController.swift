@@ -247,8 +247,12 @@ class AddDrinkViewController: UIViewController {
             textField.placeholder = "Enter drink amount."
         }
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (_) in
-            if let alertText = alert.textFields, let first = alertText.first, let text = first.text{
-          
+            if let alertText = alert.textFields, let first = alertText.first, let text = first.text, let amount = Double(text) {
+                if (text == "") {
+                    
+                }
+                let other = AlcoholicDrinks(subtype: subtype, alcPercent: alcPercent, type: type, amount: amount, date: self.today, time: self.today)
+                self.drinks.append(other)
             }
         }))
         self.present(alert, animated: true)
