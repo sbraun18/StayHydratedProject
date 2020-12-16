@@ -149,10 +149,7 @@ class AddDrinkViewController: UIViewController {
             }
         }))
         self.present(alert, animated: true)
-        
-        if (amount != "") {
-            
-        }
+
     }
     
     @IBAction func sportsDrinkButton(_ sender: UIButton) {
