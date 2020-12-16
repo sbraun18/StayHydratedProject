@@ -20,10 +20,18 @@ class WaterLogViewController: UIViewController {
         // addDrink
     }
     
+    @IBAction func unwindFromAddDrinkViewController (segue: UIStoryboardSegue) {
+        if let identifier = segue.identifier {
+            if (identifier == "SaveDrink") {
+                let drinks = AddDrinkViewController.drinks
+                print(drinks)
+            }
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -34,6 +42,7 @@ class WaterLogViewController: UIViewController {
                 
             }
             else if identifier == "AddDrinkSegue" {
+                
                 
             }
             else if identifier == "PreviousDaySegue" {

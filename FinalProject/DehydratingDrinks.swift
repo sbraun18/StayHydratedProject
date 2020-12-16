@@ -23,11 +23,9 @@
 import Foundation
 
 class DehydratingDrinks: Drinks {
-    var caffeinated: Bool = false
     var caffeinePercentage: Double
     
-    init (caffeinated: Bool, caffeinePercentage: Double, type: String, amount: Double, date: Date, time: Date) {
-        self.caffeinated = caffeinated
+    init (caffeinePercentage: Double, type: String, amount: Double, date: Date, time: Date) {
         self.caffeinePercentage = caffeinePercentage
         super.init(type: type, amount: amount, date: date, time: date)
     }

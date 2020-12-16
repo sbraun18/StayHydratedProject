@@ -8,15 +8,11 @@
 import UIKit
 
 class AddDrinkViewController: UIViewController {
-    var drinks = [Drinks]()
     var today = Date()
+    static var drinks = [Drinks]()
     
-    var healthStoreOptional: HealthStore? = nil
     
     
-    @IBOutlet var saveDrinkButton: UIButton!
-    
-    @IBOutlet var HydatingDrink: UIImageView!
     
     @IBAction func waterButton(_ sender: UIButton) {
         let hydratePercent = 1.0
@@ -32,7 +28,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let water = HydratingDrinks(hydratePercent: hydratePercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.drinks.append(water)
+                self.setDrinks(drink: water)
             }
         }))
         self.present(alert, animated: true)
@@ -53,7 +49,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let milk = HydratingDrinks(hydratePercent: hydratePercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.drinks.append(milk)
+                self.setDrinks(drink: milk)
             }
         }))
         self.present(alert, animated: true)
@@ -73,79 +69,87 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let juice = HydratingDrinks(hydratePercent: hydratePercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.drinks.append(juice)
+                self.setDrinks(drink: juice)
             }
         }))
         self.present(alert, animated: true)
     }
     
     @IBAction func sodaButton(_ sender: UIButton) {
-        var amount: String = ""
+        let caffinePercentage = 0.14
+        let type = "Soda"
         
         let alert = UIAlertController(title: "Enter how much soda you drank in fluid onces.", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Enter soda amount."
         }
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (_) in
-            if let alertText = alert.textFields, let first = alertText.first, let text = first.text{
-                amount = text
+            if let alertText = alert.textFields, let first = alertText.first, let text = first.text, let amount = Double(text) {
+                if (text == "") {
+                    
+                }
+                let soda = DehydratingDrinks(caffeinePercentage: caffinePercentage, type: type, amount: amount, date: self.today, time: self.today)
+                self.setDrinks(drink: soda)
             }
         }))
         self.present(alert, animated: true)
-        
-        if (amount != "") {
-            
-        }
     }
     
     @IBAction func coffeeButton(_ sender: UIButton) {
-        var amount: String = ""
+        let caffinePercentage = 0.37
+        let type = "Coffee"
         
         let alert = UIAlertController(title: "Enter how much coffee you drank in fluid onces.", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Enter coffee amount."
         }
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (_) in
-            if let alertText = alert.textFields, let first = alertText.first, let text = first.text{
-                amount = text
+            if let alertText = alert.textFields, let first = alertText.first, let text = first.text, let amount = Double(text) {
+                if (text == "") {
+                    
+                }
+                let coffee = DehydratingDrinks(caffeinePercentage: caffinePercentage, type: type, amount: amount, date: self.today, time: self.today)
+                self.setDrinks(drink: coffee)
             }
         }))
         self.present(alert, animated: true)
-        
-        if (amount != "") {
-            
-        }
     }
     
     @IBAction func teaButton(_ sender: UIButton) {
-        var amount: String = ""
+        let caffinePercentage = 0.03
+        let type = "Tea"
         
         let alert = UIAlertController(title: "Enter how much tea you drank in fluid onces.", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Enter tea amount."
         }
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (_) in
-            if let alertText = alert.textFields, let first = alertText.first, let text = first.text{
-                amount = text
+            if let alertText = alert.textFields, let first = alertText.first, let text = first.text, let amount = Double(text) {
+                if (text == "") {
+                    
+                }
+                let tea = DehydratingDrinks(caffeinePercentage: caffinePercentage, type: type, amount: amount, date: self.today, time: self.today)
+                self.setDrinks(drink: tea)
             }
         }))
         self.present(alert, animated: true)
-        
-        if (amount != "") {
-            
-        }
     }
     
     @IBAction func energyDrinkButton(_ sender: UIButton) {
-        var amount: String = ""
+        let caffinePercentage = 0.0003
+        let type = "Energy Drink"
         
         let alert = UIAlertController(title: "Enter how much drank of an energy drink in fluid onces.", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Enter energy drink amount."
         }
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (_) in
-            if let alertText = alert.textFields, let first = alertText.first, let text = first.text{
-                amount = text
+            if let alertText = alert.textFields, let first = alertText.first, let text = first.text, let amount = Double(text) {
+                if (text == "") {
+                    
+                }
+                let energyDrink = DehydratingDrinks(caffeinePercentage: caffinePercentage, type: type, amount: amount, date: self.today, time: self.today)
+                self.setDrinks(drink: energyDrink)
             }
         }))
         self.present(alert, animated: true)
@@ -166,7 +170,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let sportsDrink = HydratingDrinks(hydratePercent: hydratePercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.drinks.append(sportsDrink)
+                self.setDrinks(drink: sportsDrink)
             }
         }))
         self.present(alert, animated: true)
@@ -187,7 +191,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let cocktail = AlcoholicDrinks(subtype: subtype, alcPercent: alcPercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.drinks.append(cocktail)
+                self.setDrinks(drink: cocktail)
             }
         }))
         self.present(alert, animated: true)
@@ -208,7 +212,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let wine = AlcoholicDrinks(subtype: subtype, alcPercent: alcPercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.drinks.append(wine)
+                self.setDrinks(drink: wine)
             }
         }))
         self.present(alert, animated: true)
@@ -231,7 +235,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let beer = AlcoholicDrinks(subtype: subtype, alcPercent: alcPercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.drinks.append(beer)
+                self.setDrinks(drink: beer)
             }
         }))
         self.present(alert, animated: true)
@@ -252,20 +256,30 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let other = AlcoholicDrinks(subtype: subtype, alcPercent: alcPercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.drinks.append(other)
+                self.setDrinks(drink: other)
             }
         }))
         self.present(alert, animated: true)
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad () {
         super.viewDidLoad()
-        
+        AddDrinkViewController.drinks.removeAll()
         // Do any additional setup after loading the view.
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    static func getDrinks () -> [Drinks] {
+        print(drinks)
+        return drinks
     }
+    
+    func setDrinks (drink: Drinks) {
+        AddDrinkViewController.drinks.append(drink)
+        print(AddDrinkViewController.drinks)
+    }
+    
+    
+    
     
     
     /*
