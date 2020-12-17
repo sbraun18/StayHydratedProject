@@ -92,6 +92,13 @@ class WaterLogViewController: UIViewController {
                     settingVC.setting = set
                 }
             }
+            if identifier == "PreviousDaySegue" {
+                if let waterAmountVC = segue.destination as? PreviousDayViewController {
+                    if let hs = healthStore {
+                        waterAmountVC.water = hs.readYesterdaysWater()
+                    }
+                }
+            }
         }
     }
         

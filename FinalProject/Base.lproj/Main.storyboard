@@ -161,6 +161,7 @@
                     <connections>
                         <outlet property="hydrationLevelLabel" destination="Myr-6S-TMn" id="w0L-NW-gR7"/>
                         <outlet property="previousDayLabel" destination="PV2-4T-Pzc" id="9Kg-V2-wQM"/>
+                        <outlet property="waterCupImage" destination="4hv-uL-rnt" id="JOo-Xt-r9s"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="SettingsSegue" id="Sv0-V6-tPq"/>
                     </connections>
                 </viewController>

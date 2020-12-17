@@ -14,9 +14,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "setWaterLevel(alcDrinks:hydrateDrinks:dehydrateDrinks:)"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,9 +30,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "setWaterLevel(alcDrinks:hydrateDrinks:dehydrateDrinks:)"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,9 +46,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "setWaterLevel(alcDrinks:hydrateDrinks:dehydrateDrinks:)"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,9 +62,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "setWaterLevel(alcDrinks:hydrateDrinks:dehydrateDrinks:)"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,9 +78,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "setWaterLevel(alcDrinks:hydrateDrinks:dehydrateDrinks:)"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,9 +94,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "setWaterLevel(alcDrinks:hydrateDrinks:dehydrateDrinks:)"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "viewWillDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,9 +110,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "setWaterLevel(alcDrinks:hydrateDrinks:dehydrateDrinks:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "viewWillDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -126,9 +126,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "changeImage(waterLevel:)"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -142,9 +142,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "changeImage(waterLevel:)"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -158,9 +158,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "changeImage(waterLevel:)"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -176,8 +176,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "unwindFromAddDrinkViewController(segue:)"
-            landmarkType = "7">
+            landmarkName = "WaterLogViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -190,9 +190,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "changeImage(waterLevel:)"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -206,9 +206,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "changeImage(waterLevel:)"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -222,9 +222,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "changeImage(waterLevel:)"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -238,9 +238,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
-            landmarkName = "changeImage(waterLevel:)"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -254,9 +254,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "changeImage(waterLevel:)"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -270,9 +270,9 @@
             filePath = "FinalProject/WaterLogViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "changeImage(waterLevel:)"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "getAlerts()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -288,7 +288,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "setWaterLevel(alcDrinks:hydrateDrinks:dehydrateDrinks:)"
+            landmarkName = "storeWater(hydrateDrinks:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -304,7 +304,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
             endingLineNumber = "79"
-            landmarkName = "setWaterLevel(alcDrinks:hydrateDrinks:dehydrateDrinks:)"
+            landmarkName = "storeWater(hydrateDrinks:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
