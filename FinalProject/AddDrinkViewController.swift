@@ -9,7 +9,9 @@ import UIKit
 
 class AddDrinkViewController: UIViewController {
     var today = Date()
-    static var drinks = [Drinks]()
+    static var alcDrinks = [AlcoholicDrinks]()
+    static var hydrateDrinks = [HydratingDrinks]()
+    static var dehydrateDrinks = [DehydratingDrinks]()
     
     
     
@@ -28,7 +30,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let water = HydratingDrinks(hydratePercent: hydratePercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: water)
+                self.setHydrateDrinks(drink: water)
             }
         }))
         self.present(alert, animated: true)
@@ -49,7 +51,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let milk = HydratingDrinks(hydratePercent: hydratePercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: milk)
+                self.setHydrateDrinks(drink: milk)
             }
         }))
         self.present(alert, animated: true)
@@ -69,7 +71,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let juice = HydratingDrinks(hydratePercent: hydratePercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: juice)
+                self.setHydrateDrinks(drink: juice)
             }
         }))
         self.present(alert, animated: true)
@@ -89,7 +91,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let soda = DehydratingDrinks(caffeinePercentage: caffinePercentage, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: soda)
+                self.setDehydrateDrinks(drink: soda)
             }
         }))
         self.present(alert, animated: true)
@@ -109,7 +111,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let coffee = DehydratingDrinks(caffeinePercentage: caffinePercentage, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: coffee)
+                self.setDehydrateDrinks(drink: coffee)
             }
         }))
         self.present(alert, animated: true)
@@ -129,7 +131,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let tea = DehydratingDrinks(caffeinePercentage: caffinePercentage, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: tea)
+                self.setDehydrateDrinks(drink: tea)
             }
         }))
         self.present(alert, animated: true)
@@ -149,7 +151,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let energyDrink = DehydratingDrinks(caffeinePercentage: caffinePercentage, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: energyDrink)
+                self.setDehydrateDrinks(drink: energyDrink)
             }
         }))
         self.present(alert, animated: true)
@@ -170,7 +172,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let sportsDrink = HydratingDrinks(hydratePercent: hydratePercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: sportsDrink)
+                self.setHydrateDrinks(drink: sportsDrink)
             }
         }))
         self.present(alert, animated: true)
@@ -191,7 +193,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let cocktail = AlcoholicDrinks(subtype: subtype, alcPercent: alcPercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: cocktail)
+                self.setAlcDrinks(drink: cocktail)
             }
         }))
         self.present(alert, animated: true)
@@ -212,7 +214,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let wine = AlcoholicDrinks(subtype: subtype, alcPercent: alcPercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: wine)
+                self.setAlcDrinks(drink: wine)
             }
         }))
         self.present(alert, animated: true)
@@ -235,7 +237,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let beer = AlcoholicDrinks(subtype: subtype, alcPercent: alcPercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: beer)
+                self.setAlcDrinks(drink: beer)
             }
         }))
         self.present(alert, animated: true)
@@ -256,7 +258,7 @@ class AddDrinkViewController: UIViewController {
                     
                 }
                 let other = AlcoholicDrinks(subtype: subtype, alcPercent: alcPercent, type: type, amount: amount, date: self.today, time: self.today)
-                self.setDrinks(drink: other)
+                self.setAlcDrinks(drink: other)
             }
         }))
         self.present(alert, animated: true)
@@ -264,20 +266,27 @@ class AddDrinkViewController: UIViewController {
     
     override func viewDidLoad () {
         super.viewDidLoad()
-        AddDrinkViewController.drinks.removeAll()
+        AddDrinkViewController.alcDrinks.removeAll()
+        AddDrinkViewController.hydrateDrinks.removeAll()
+        AddDrinkViewController.dehydrateDrinks.removeAll()
         // Do any additional setup after loading the view.
     }
     
-    static func getDrinks () -> [Drinks] {
-        print(drinks)
-        return drinks
+    static func getDrinks () -> ([AlcoholicDrinks], [DehydratingDrinks], [HydratingDrinks]) {
+        return (alcDrinks, dehydrateDrinks, hydrateDrinks)
     }
     
-    func setDrinks (drink: Drinks) {
-        AddDrinkViewController.drinks.append(drink)
-        print(AddDrinkViewController.drinks)
+    func setHydrateDrinks (drink: HydratingDrinks) {
+        AddDrinkViewController.hydrateDrinks.append(drink)
     }
     
+    func setAlcDrinks (drink: AlcoholicDrinks) {
+        AddDrinkViewController.alcDrinks.append(drink)
+    }
+    
+    func setDehydrateDrinks (drink: DehydratingDrinks) {
+        AddDrinkViewController.dehydrateDrinks.append(drink)
+    }
     
     
     

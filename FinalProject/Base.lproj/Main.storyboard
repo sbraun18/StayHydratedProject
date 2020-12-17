@@ -460,8 +460,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="biJ-1q-mZW">
-                                        <rect key="frame" x="87" y="268" width="240" height="233"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="waterCup0" translatesAutoresizingMaskIntoConstraints="NO" id="biJ-1q-mZW">
+                                        <rect key="frame" x="7" y="268" width="400" height="233"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3i6-Gh-ihr">
                                         <rect key="frame" x="173" y="536" width="68" height="233"/>
@@ -488,6 +488,7 @@
                     <tabBarItem key="tabBarItem" title="Water Log" image="drop" catalog="system" id="MOb-Z7-hBp"/>
                     <connections>
                         <outlet property="hydrationLabelLabel" destination="acl-dr-c6k" id="B7q-U8-7bg"/>
+                        <outlet property="waterCupImage" destination="biJ-1q-mZW" id="FOJ-Wa-kP3"/>
                         <segue destination="9JP-YA-xod" kind="show" identifier="AddDrinkSegue" id="Wou-wh-MrN"/>
                     </connections>
                 </viewController>
@@ -535,6 +536,7 @@
         <image name="soda" width="512" height="512"/>
         <image name="tea" width="512" height="512"/>
         <image name="water" width="512" height="512"/>
+        <image name="waterCup0" width="400" height="300"/>
         <image name="wine" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
