@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		9215E07B2576F0F4003ECD4F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9215E07A2576F0F4003ECD4F /* HealthKit.framework */; };
-		9215E08525773174003ECD4F /* WaterGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9215E08425773174003ECD4F /* WaterGraphic.swift */; };
 		92F5CD402589FA4D00D15EBC /* SettingsInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92F5CD3E2589FA4D00D15EBC /* SettingsInfo.xcdatamodeld */; };
 		92F5CD442589FA8E00D15EBC /* SettingsInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5CD422589FA8E00D15EBC /* SettingsInfo+CoreDataClass.swift */; };
 		92F5CD452589FA8E00D15EBC /* SettingsInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F5CD432589FA8E00D15EBC /* SettingsInfo+CoreDataProperties.swift */; };
 		BF1438CF2577F9ED00C6ED98 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1438CE2577F9ED00C6ED98 /* Settings.swift */; };
 		BF1438DA25783CF500C6ED98 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1438D825783CF500C6ED98 /* HealthStore.swift */; };
+		BF3211AC258B630100813A98 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3211AB258B630100813A98 /* MyTabBarController.swift */; };
 		BF3D1C432575D8F5006B3D7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3D1C422575D8F5006B3D7D /* AppDelegate.swift */; };
 		BF3D1C452575D8F5006B3D7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3D1C442575D8F5006B3D7D /* SceneDelegate.swift */; };
 		BF3D1C472575D8F5006B3D7D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3D1C462575D8F5006B3D7D /* SettingsViewController.swift */; };
@@ -32,12 +32,12 @@
 /* Begin PBXFileReference section */
 		9215E0782576F0F4003ECD4F /* FinalProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinalProject.entitlements; sourceTree = "<group>"; };
 		9215E07A2576F0F4003ECD4F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		9215E08425773174003ECD4F /* WaterGraphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterGraphic.swift; sourceTree = "<group>"; };
 		92F5CD3F2589FA4D00D15EBC /* SettingsInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SettingsInfo.xcdatamodel; sourceTree = "<group>"; };
 		92F5CD422589FA8E00D15EBC /* SettingsInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsInfo+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		92F5CD432589FA8E00D15EBC /* SettingsInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsInfo+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		BF1438CE2577F9ED00C6ED98 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		BF1438D825783CF500C6ED98 /* HealthStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		BF3211AB258B630100813A98 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		BF3D1C3F2575D8F5006B3D7D /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3D1C422575D8F5006B3D7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF3D1C442575D8F5006B3D7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +105,7 @@
 				BF3D1C5F2575DBC5006B3D7D /* WaterLogViewController.swift */,
 				BF1438CE2577F9ED00C6ED98 /* Settings.swift */,
 				BF3D1C572575D976006B3D7D /* AddDrinkViewController.swift */,
+				BF3211AB258B630100813A98 /* MyTabBarController.swift */,
 				BF3D1C5B2575D988006B3D7D /* PreviousDayViewController.swift */,
 				BF3D1C462575D8F5006B3D7D /* SettingsViewController.swift */,
 				BF3D1C422575D8F5006B3D7D /* AppDelegate.swift */,
@@ -115,7 +116,6 @@
 				BF3D1C692575E09A006B3D7D /* DehydratingDrinks.swift */,
 				BF3D1C4B2575D8F7006B3D7D /* Assets.xcassets */,
 				BF3D1C502575D8F7006B3D7D /* Info.plist */,
-				9215E08425773174003ECD4F /* WaterGraphic.swift */,
 			);
 			path = FinalProject;
 			sourceTree = "<group>";
@@ -199,9 +199,9 @@
 				BF1438CF2577F9ED00C6ED98 /* Settings.swift in Sources */,
 				BF1438DA25783CF500C6ED98 /* HealthStore.swift in Sources */,
 				92F5CD452589FA8E00D15EBC /* SettingsInfo+CoreDataProperties.swift in Sources */,
+				BF3211AC258B630100813A98 /* MyTabBarController.swift in Sources */,
 				92F5CD402589FA4D00D15EBC /* SettingsInfo.xcdatamodeld in Sources */,
 				BF3D1C6A2575E09A006B3D7D /* DehydratingDrinks.swift in Sources */,
-				9215E08525773174003ECD4F /* WaterGraphic.swift in Sources */,
 				BF3D1C6E2575E0B2006B3D7D /* AlcoholicDrinks.swift in Sources */,
 				BF3D1C5C2575D988006B3D7D /* PreviousDayViewController.swift in Sources */,
 				BF3D1C632575DC0F006B3D7D /* Drinks.swift in Sources */,

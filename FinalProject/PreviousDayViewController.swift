@@ -9,6 +9,8 @@ import UIKit
 import CoreData
 import HealthKit
 
+
+@available(iOS 13.0, *)
 class PreviousDayViewController: UIViewController {
     static var water: Double? = nil
     
@@ -19,9 +21,17 @@ class PreviousDayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.selectedIndex = 1
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         print(documentsDirectoryURL)
         
+        // Do any additional setup after loading the view.
+        //let entity = NSEntityDescription.entity(forEntityName: "SettingInfo", in: context)
+        //let newUser = NSManagedObject(entity: entity!, insertInto: context)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if let waterLevel = PreviousDayViewController.water {
             print("Water Level is \(waterLevel)")
             if (waterLevel < 0) {
@@ -58,10 +68,6 @@ class PreviousDayViewController: UIViewController {
             }
             
         }
-        
-        // Do any additional setup after loading the view.
-        //let entity = NSEntityDescription.entity(forEntityName: "SettingInfo", in: context)
-        //let newUser = NSManagedObject(entity: entity!, insertInto: context)
     }
     
     

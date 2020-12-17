@@ -36,21 +36,16 @@ class WaterLogViewController: UIViewController {
         }
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewDidDisappear (_ animated: Bool) {
         
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         print(documentsDirectoryURL)
         sendInfoToSetting()
         sendWaterAmount()
-
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad () {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         let isInfoShown = UserDefaults.standard.string(forKey: "Info")
         if (isInfoShown == nil || isInfoShown == "") {
             UserDefaults.standard.setValue("ShownInfo", forKey: "Info")
@@ -71,8 +66,9 @@ class WaterLogViewController: UIViewController {
             print("1st time launch, showing info Alert.")
             UserDefaults.standard.set(true, forKey: "ShownAlert")
         }
-
+        // Do any additional setup after loading the view.
     }
+    
     
     func storeWater(hydrateDrinks: [HydratingDrinks]) {
         var waterAmount: Double = 0.0
