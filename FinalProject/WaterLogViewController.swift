@@ -11,7 +11,7 @@ import HealthKit
 class WaterLogViewController: UIViewController {
     var settings = Settings()
     var waterLevel = 0.0
-
+    private var healthStore: HealthStore?
     
     @IBOutlet var hydrationLabelLabel: UILabel!
     
@@ -35,6 +35,19 @@ class WaterLogViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        healthStore = HealthStore()
+        
+        if let healthStore = healthStore {
+            healthStore.requestCaffeineAuthorization { (success) in
+                
+            }
+            healthStore.requestWaterAuthorization { (success) in
+                
+            }
+        }
     }
     
     
@@ -129,16 +142,6 @@ class WaterLogViewController: UIViewController {
             waterCupImage.image = UIImage(named: "waterCup7")
         }
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
