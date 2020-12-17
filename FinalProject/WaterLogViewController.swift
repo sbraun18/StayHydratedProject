@@ -89,9 +89,7 @@ class WaterLogViewController: UIViewController {
     }
     
     func sendWaterAmount () {
-        if let hs = healthStore {
-            PreviousDayViewController.water = hs.readYesterdaysWater()
-        }
+            water = healthstore.readYesterdaysWater()
     }
       
         

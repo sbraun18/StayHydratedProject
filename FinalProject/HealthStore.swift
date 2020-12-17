@@ -65,7 +65,7 @@ class HealthStore {
         
     }
     
-    func readYesterdaysWater () -> Double {
+     func readYesterdaysWater () -> Double {
         //rest of the code will be here
         var waterAmount = 0.0
         let readData = Set([
