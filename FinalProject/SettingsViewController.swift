@@ -27,17 +27,20 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
         _ = Date()
         
-        if let settings = setting , let birthday = settings.age as Date? {
+        if let settings = setting, let birthday = settings.age as Date? {
             nameTextField.text = settings.name
             heightTextField.text = String(settings.height)
             weightTextField.text = String(settings.weight)
             ageTextField.text = dateFormatter.string(from: birthday)
         }
-        
     }
 
     /*

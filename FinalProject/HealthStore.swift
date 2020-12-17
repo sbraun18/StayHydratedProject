@@ -8,6 +8,7 @@
 import Foundation
 import HealthKit
 
+@available(iOS 13.0, *)
 class HealthStore {
     var healthStore: HKHealthStore?
     
@@ -63,5 +64,80 @@ class HealthStore {
           })
         
     }
+    
+    func readYesterdaysWater () -> Double {
+        //rest of the code will be here
+        var waterAmount = 0.0
+        let readData = Set([
+            HKObjectType.quantityType(forIdentifier: .dietaryWater)!
+        ])
+        let calendar = NSCalendar.current
+                
+        var anchorComponents = calendar.dateComponents([.day, .month, .year, .weekday], from: NSDate() as Date)
+                
+        anchorComponents.day! -= 1
+        guard let anchorDate = Calendar.current.date(from: anchorComponents) else {
+            fatalError("*** unable to create a valid date from the given components ***")
+        }
+        guard let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater) else {
+                fatalError("*** Unable to create a water count type ***")
+        }
+        let interval = NSDateComponents()
+        let query = HKStatisticsCollectionQuery(quantityType: quantityType, quantitySamplePredicate: nil, options: .mostRecent, anchorDate: anchorDate, intervalComponents: interval as DateComponents)
+                
+        query.initialResultsHandler = {
+            query, results, error in
+                    
+            guard let statsCollection = results else {
+                fatalError("*** An error occurred while calculating the statistics: \(String(describing: error?.localizedDescription)) ***")
+                        
+            }
+            statsCollection.enumerateStatistics(from: Date.yesterday, to: Date.tomorrow) { statistics, stop in
+                if let quantity = statistics.averageQuantity() {
+                    let date = statistics.startDate
+                    //for: E.g. for steps it's HKUnit.count()
+                    let value = quantity.doubleValue(for: HKUnit(from: "fl_oz_us"))
+                    print("done")
+                    print(value)
+                    print(date)
+                    waterAmount = value
+                }
+            }
+        }
+        return waterAmount
+    }
 }
 
+extension Date {
+    static var yesterday: Date {
+        return Date().dayBefore
+    }
+    static var tomorrow:  Date {
+        return Date().dayAfter
+    }
+    var dayBefore: Date
+    {
+        return Calendar.current.date(byAdding: .day, value: -1, to: midnight)!
+    }
+    var dayAfter: Date
+    {
+        return Calendar.current.date(byAdding: .day, value: -1, to: midnight)!
+    }
+    var midnight: Date
+    {
+        return Calendar.current.date(bySettingHour: 24, minute: 0, second: 0, of: self)!
+        
+    }
+    var morning: Date
+    {
+        return Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: self)!
+    }
+    var month: Int
+    {
+        return Calendar.current.component(.month,  from: self)
+    }
+    var isLastDayOfMonth: Bool
+    {
+        return dayAfter.month != month
+    }
+}

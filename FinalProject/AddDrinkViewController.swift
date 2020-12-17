@@ -266,9 +266,9 @@ class AddDrinkViewController: UIViewController {
     
     override func viewDidLoad () {
         super.viewDidLoad()
-        AddDrinkViewController.alcDrinks.removeAll()
-        AddDrinkViewController.hydrateDrinks.removeAll()
-        AddDrinkViewController.dehydrateDrinks.removeAll()
+        //AddDrinkViewController.alcDrinks.removeAll()
+        //AddDrinkViewController.hydrateDrinks.removeAll()
+        //AddDrinkViewController.dehydrateDrinks.removeAll()
         // Do any additional setup after loading the view.
     }
     
