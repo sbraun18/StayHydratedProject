@@ -70,7 +70,7 @@ class WaterLogViewController: UIViewController {
     }
     
     
-    func storeWater(hydrateDrinks: [HydratingDrinks]) {
+    func storeWater (hydrateDrinks: [HydratingDrinks]) {
         var waterAmount: Double = 0.0
         for water in hydrateDrinks {
             if water.type == "Water" {
@@ -89,11 +89,14 @@ class WaterLogViewController: UIViewController {
     }
     
     func sendWaterAmount () {
-            water = healthstore.readYesterdaysWater()
+        if let healthstore = healthStore {
+            let yesterday = healthstore.readYesterdaysWater()
+            
+        }
     }
       
         
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear (_ animated: Bool) {
         var newSetting = SettingsInfo(context: self.context)
         newSetting.name = Settings.getName()
         newSetting.age = Settings.getAge().1
