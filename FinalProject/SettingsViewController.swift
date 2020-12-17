@@ -12,7 +12,7 @@ import CoreData
 class SettingsViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var setting: SettingsInfo? = nil
+    static var setting: SettingsInfo? = nil
 
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var heightTextField: UITextField!
@@ -35,7 +35,7 @@ class SettingsViewController: UIViewController {
         dateFormatter.dateFormat = "MM/dd/yyyy"
         _ = Date()
         
-        if let settings = setting, let birthday = settings.age as Date? {
+        if let settings = SettingsViewController.setting, let birthday = settings.age as Date? {
             nameTextField.text = settings.name
             heightTextField.text = String(settings.height)
             weightTextField.text = String(settings.weight)

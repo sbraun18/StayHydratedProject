@@ -10,7 +10,7 @@ import CoreData
 import HealthKit
 
 class PreviousDayViewController: UIViewController {
-    var water: Double? = nil
+    static var water: Double? = nil
     
     
     @IBOutlet var waterCupImage: UIImageView!
@@ -22,7 +22,7 @@ class PreviousDayViewController: UIViewController {
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         print(documentsDirectoryURL)
         
-        if let waterLevel = water {
+        if let waterLevel = PreviousDayViewController.water {
             print("Water Level is \(waterLevel)")
             if (waterLevel < 0) {
                 waterCupImage.image = UIImage(named: "waterCup0")

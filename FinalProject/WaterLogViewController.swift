@@ -40,6 +40,8 @@ class WaterLogViewController: UIViewController {
         
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         print(documentsDirectoryURL)
+        sendInfoToSetting()
+        sendWaterAmount()
 
     }
     
@@ -84,23 +86,18 @@ class WaterLogViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let identifier = segue.identifier {
-            if identifier == "SettingSegue" {
-                if let settingVC = segue.destination as? SettingsViewController {
-                    let set = setting[0]
-                    settingVC.setting = set
-                }
-            }
-            if identifier == "PreviousDaySegue" {
-                if let waterAmountVC = segue.destination as? PreviousDayViewController {
-                    if let hs = healthStore {
-                        waterAmountVC.water = hs.readYesterdaysWater()
-                    }
-                }
-            }
+    func sendInfoToSetting () {
+        let set = setting[0]
+        SettingsViewController.setting = set
+        
+    }
+    
+    func sendWaterAmount () {
+        if let hs = healthStore {
+            PreviousDayViewController.water = hs.readYesterdaysWater()
         }
     }
+      
         
     override func viewWillDisappear(_ animated: Bool) {
         var newSetting = SettingsInfo(context: self.context)
