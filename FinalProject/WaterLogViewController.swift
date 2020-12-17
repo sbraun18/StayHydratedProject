@@ -65,6 +65,7 @@ class WaterLogViewController: UIViewController {
         if !alertShown {
             print("1st time launch, showing info Alert.")
             UserDefaults.standard.set(true, forKey: "ShownAlert")
+            healthStore = HealthStore()
         }
         // Do any additional setup after loading the view.
     }

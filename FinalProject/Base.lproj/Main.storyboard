@@ -119,6 +119,7 @@
         <!--Yesterdays Water-->
         <scene sceneID="Qf6-rt-s9z">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKk-rM-aHS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Yesterdays Water" id="3xi-AI-aJt" customClass="PreviousDayViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ar-6M-aLj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -157,14 +158,13 @@
                             <constraint firstItem="gds-Ho-w8r" firstAttribute="leading" secondItem="gUM-Gr-4bl" secondAttribute="leading" id="l3r-HL-wxN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Previous Day" image="backward" catalog="system" id="PV1-uN-YXe"/>
+                    <tabBarItem key="tabBarItem" title="" id="PV1-uN-YXe"/>
                     <navigationItem key="navigationItem" id="yVD-P7-XuV"/>
                     <connections>
                         <outlet property="hydrationLevelLabel" destination="Myr-6S-TMn" id="w0L-NW-gR7"/>
                         <outlet property="previousDayLabel" destination="PV2-4T-Pzc" id="9Kg-V2-wQM"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bKk-rM-aHS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="-633"/>
         </scene>
@@ -431,18 +431,15 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Bb6-Vo-5SX">
                                                 <rect key="frame" x="262.5" y="0.0" width="111.5" height="152.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ya-rz-S7d">
-                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="131.5"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ya-rz-S7d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="132"/>
                                                         <state key="normal" title="Button" image="cup"/>
                                                         <connections>
                                                             <action selector="otherDrinkButton:" destination="A97-Md-nov" eventType="touchUpInside" id="SvN-uM-cOC"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1is-i9-gyB">
-                                                        <rect key="frame" x="34" y="131.5" width="43.5" height="21"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="21" id="KxW-4u-1Nk"/>
-                                                        </constraints>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1is-i9-gyB">
+                                                        <rect key="frame" x="34" y="132" width="43.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -552,7 +549,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backward" catalog="system" width="128" height="79"/>
         <image name="beer" width="512" height="512"/>
         <image name="cocktail" width="512" height="512"/>
         <image name="coffee" width="512" height="512"/>

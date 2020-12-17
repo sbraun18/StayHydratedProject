@@ -22,7 +22,7 @@ class PreviousDayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBarController?.selectedIndex = 1
+        //self.tabBarController?.selectedIndex = 1
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         print(documentsDirectoryURL)
         
