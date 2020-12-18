@@ -39,36 +39,46 @@ class WaterLogViewController: UIViewController {
     override func viewDidDisappear (_ animated: Bool) {
         
         let documentsDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        print(documentsDirectoryURL)
-        sendInfoToSetting()
-        sendWaterAmount()
+                print(documentsDirectoryURL)
     }
     
     override func viewDidLoad () {
-        super.viewDidLoad()
-        let isInfoShown = UserDefaults.standard.string(forKey: "Info")
-        if (isInfoShown == nil || isInfoShown == "") {
-            UserDefaults.standard.setValue("ShownInfo", forKey: "Info")
-            getAlerts()
+            super.viewDidLoad()
             healthStore = HealthStore()
+            let isInfoShown = UserDefaults.standard.string(forKey: "Info")
+            if (isInfoShown == nil || isInfoShown == "") {
+                UserDefaults.standard.setValue("ShownInfo", forKey: "Info")
             
-            if let healthStore = healthStore {
-                healthStore.requestCaffeineAuthorization { (success) in
-                    
-                }
-                healthStore.requestWaterAuthorization { (success) in
-                    
+                if let healthStore = healthStore {
+                    healthStore.requestCaffeineAuthorization { (success) in
+                        DispatchQueue.main.async {
+                            self.getAlerts()
+                        }
+                    }
+                    healthStore.requestWaterAuthorization { (success) in
+                        
+                    }
                 }
             }
+            let alertShown = UserDefaults.standard.bool(forKey: "ShownAlert")
+            if !alertShown {
+                print("1st time launch, showing info Alert.")
+                UserDefaults.standard.set(true, forKey: "ShownAlert")
+            }
+            // Do any additional setup after loading the view.
+            
+            loadSettings()
+            if setting.count == 1 {
+                Settings.setName(name: setting[0].name)
+                let dateFormatter = DateFormatter()
+                if let savedAge = setting[0].age {
+                    let age = dateFormatter.string(from: savedAge)
+                    Settings.setAge(birthday: age)
+                }
+                Settings.setHeight(height: String(setting[0].height))
+                Settings.setWeight(weight: String(setting[0].weight))
+            }
         }
-        let alertShown = UserDefaults.standard.bool(forKey: "ShownAlert")
-        if !alertShown {
-            print("1st time launch, showing info Alert.")
-            UserDefaults.standard.set(true, forKey: "ShownAlert")
-            healthStore = HealthStore()
-        }
-        // Do any additional setup after loading the view.
-    }
     
     
     func storeWater (hydrateDrinks: [HydratingDrinks]) {
@@ -90,21 +100,27 @@ class WaterLogViewController: UIViewController {
     }
     
     func sendWaterAmount () {
-        if let healthstore = healthStore {
-            let yesterday = healthstore.readYesterdaysWater()
-            
+        if let healthstore = healthStore { healthstore.readYesterdaysWater()
+                    
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            if setting.count == 0 {
+            let newSetting = SettingsInfo(context: self.context)
+            newSetting.name = Settings.getName()
+            newSetting.age = Settings.getAge().1
+            newSetting.height = Settings.getHeight().1
+            newSetting.weight = Settings.getWeight().1
+            setting.append(newSetting)
+                saveSettings()
+            }
+        }
       
         
     override func viewWillDisappear (_ animated: Bool) {
-        var newSetting = SettingsInfo(context: self.context)
-        newSetting.name = Settings.getName()
-        newSetting.age = Settings.getAge().1
-        newSetting.height = Settings.getHeight().1
-        newSetting.weight = Settings.getWeight().1
-        setting.append(newSetting)
-        saveSettings()
+        sendWaterAmount()
+        sendInfoToSetting()
     }
    
     func getAlerts () {
@@ -140,6 +156,12 @@ class WaterLogViewController: UIViewController {
                             weightAlert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { (_) in
                                 if let alertText = weightAlert.textFields, let first = alertText.first, let text = first.text {
                                     Settings.setWeight(weight: text)
+                                    Settings.setWeight(weight: text)
+                                    self.setting[0].name = Settings.getName()
+                                    self.setting[0].age = Settings.getAge().1
+                                    self.setting[0].weight = Settings.getWeight().1
+                                    self.setting[0].height = Settings.getHeight().1
+                                    self.saveSettings()
                                 }
                             }))
                             self.present(weightAlert, animated: true)

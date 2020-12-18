@@ -119,7 +119,6 @@
         <!--Yesterdays Water-->
         <scene sceneID="Qf6-rt-s9z">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bKk-rM-aHS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Yesterdays Water" id="3xi-AI-aJt" customClass="PreviousDayViewController" customModule="FinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ar-6M-aLj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -158,13 +157,15 @@
                             <constraint firstItem="gds-Ho-w8r" firstAttribute="leading" secondItem="gUM-Gr-4bl" secondAttribute="leading" id="l3r-HL-wxN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="PV1-uN-YXe"/>
+                    <tabBarItem key="tabBarItem" title="Previous" image="arrowshape.turn.up.left.2" catalog="system" id="PV1-uN-YXe"/>
                     <navigationItem key="navigationItem" id="yVD-P7-XuV"/>
                     <connections>
                         <outlet property="hydrationLevelLabel" destination="Myr-6S-TMn" id="w0L-NW-gR7"/>
                         <outlet property="previousDayLabel" destination="PV2-4T-Pzc" id="9Kg-V2-wQM"/>
+                        <outlet property="waterCupImage" destination="4hv-uL-rnt" id="oO9-Qt-4Df"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKk-rM-aHS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="-633"/>
         </scene>
@@ -549,6 +550,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.left.2" catalog="system" width="128" height="86"/>
         <image name="beer" width="512" height="512"/>
         <image name="cocktail" width="512" height="512"/>
         <image name="coffee" width="512" height="512"/>
